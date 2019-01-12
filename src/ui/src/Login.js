@@ -21,7 +21,7 @@ class Login extends Component {
             AuthStore.saveToken(response.data.token);
             this.props.history.push("/")
         } else {
-            this.setState({errorMessage: this.loginError});
+            this.setState({loading: false, errorMessage: this.loginError});
         }
     };
 
