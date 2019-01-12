@@ -1,0 +1,38 @@
+version: '3'
+services:
+  ui:
+    build: ./src/ui
+    volumes:
+      - ./src/ui:/ui
+      - /ui/node_modules
+    ports:
+      - 3000:3000
+    container_name: mvw_ui
+    depends_on:
+      - api
+  api:
+    build: ./src/api
+    volumes:
+      - ./src/api:/api
+      - /api/node_modules
+    ports:
+      - 8000:8000
+    container_name: mvw_api
+    depends_on:
+      - flyway
+  flyway:
+    image: boxfuse/flyway:5.2.1
+    command: -url=jdbc:mysql://db -schemas=mvw -user=root -password=P@ssw0rd -connectRetries=60 migrate
+    volumes:
+      - ./sql:/flyway/sql
+    container_name: mvw_flyway
+    depends_on:
+      - db
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=P@ssw0rd
+    ports:
+      - 3306:3306
+    container_name: mvw_db
