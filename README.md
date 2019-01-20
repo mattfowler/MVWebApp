@@ -10,11 +10,15 @@ A simple single page application with user creation and login using the power of
 
 ![Demo](img/mvw.gif)
 
+![Build](https://travis-ci.org/mattfowler/MVWebapp.svg?branch=master)
+
 Secured with JWTs this application allows a user to
 * Create an account
 * Login with that account
 * See a welcome message on login
 * Logout
+
+
 
 ## Running
 

@@ -3,5 +3,4 @@ before_script:
   - npm install
 language: node_js
 node_js:
-- "iojs"
 - "11"
