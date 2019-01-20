@@ -1,2 +1,4 @@
-before_script: cd src/ui
+before_script:
+  - cd src/ui
+  - npm install
 language: node_js
