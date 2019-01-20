@@ -1,0 +1,2 @@
+before_script: cd src/ui
+language: node_js
