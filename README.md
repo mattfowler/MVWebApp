@@ -1,4 +1,4 @@
-# MVWebapp
+# MVWebApp
 
 A simple single page application with user creation and login using the power of:
 
